@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>簡単な計算ゲーム</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>簡単な計算ゲーム</h1>
+       <select id="calclation-type">
+            <option value="addition">足し算</option>
+            <option value="subtraction">引き算</option>
+            <option value="multiplication">掛け算</option>
+            <!-- <option value="division">割り算</option> -- 割り算は除外 -->
+        </select>
+        <button id="start-btn">ゲーム開始</button>
+        <div id="game-area">
+            <div id="question" class="question"> ? + ? = ?</div>
+          <button id="option1" class="option-btn"></button>
+          <button id="option2" class="option-btn"></button>
+            <button id="option3" class="option-btn"></button>
+            <button id="option4" class="option-btn"></button>
+            <div id="feedback"></div>
+            <div id="score-board">
+                <span id="score">スコア: 0</span>
+                <span id="time-remaining">残り時間: 20秒</span>
+        </div>
+        
+    </div>
+    <script src="index.js"></script>
