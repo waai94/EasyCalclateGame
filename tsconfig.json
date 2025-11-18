@@ -45,5 +45,7 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "lib": ["DOM", "ES6", "DOM.Iterable", "ScriptHost"]
-  }
+  
+  },
+  "include": ["./src/**/*"]
 }

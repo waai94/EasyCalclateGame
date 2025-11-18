@@ -11,7 +11,7 @@ let calclationType = 'addition'; // デフォルトは足し算
 
 let timer: number;
 let timeRemaining = 20; // ゲーム時間（秒）
-let defaultTime = 20; // デフォルトのゲーム時間（秒）
+let defaultTime = 40; // デフォルトのゲーム時間（秒）
 let penaltyTime = 1; // 不正解時のペナルティ時間（秒）
 let gameInProgress = false;
 
@@ -50,6 +50,8 @@ function startGame() {
     timeRemaining = defaultTime; // ゲーム時間をリセット
     gameInProgress = true;
 
+    clearInterval(timer); //タイマーが動いているときはクリア
+    // タイマー開始
     timer = window.setInterval(() => {
         timeRemaining--;
         const timeRemainingSpan = document.getElementById('time-remaining') as HTMLSpanElement;
@@ -92,7 +94,7 @@ function CreateQuestionAndAnswer(type: string)
     const optionArray = Array.from(options);
     optionArray.sort(() => Math.random() - 0.5); // 選択肢をランダムにシャッフル
     optionButtons.forEach((button, index) => {
-        const formattedAnswer = (optionArray[index]! < 10 ? "0" : "") + optionArray[index]!.toString();
+        const formattedAnswer = (optionArray[index]! < 10  && optionArray[index]! > 0? "0" : "") + optionArray[index]!.toString(); // 1桁の数値に0を付加
         button.innerText = formattedAnswer;
     }); 
 }
